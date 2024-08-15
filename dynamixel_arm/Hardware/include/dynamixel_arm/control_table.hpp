@@ -1,3 +1,7 @@
+#ifndef DYNAMIXEL_ARM__CONTROL_TABLE_HPP_
+#define DYNAMIXEL_ARM__CONTROL_TABLE_HPP_
+
+
 /****************Control Table Address for AX-12A*********************/
 // EEPROM AREA
 #define ADDR_MODEL_NUMBER 0
@@ -44,3 +48,5 @@
 #define WHEELMODE 0x3FF
 
 #define DEVICE_NAME "/dev/ttyUSB0"
+
+#endif  // DYNAMIXEL_ARM__CONTROL_TABLE_HPP_
