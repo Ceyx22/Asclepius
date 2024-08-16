@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="acps">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.019877 0.012957 0.006213"
+        rpy="0 0 0" />
+      <mass
+        value="0.043005" />
+      <inertia
+        ixx="3.5652E-06"
+        ixy="-3.2723E-08"
+        ixz="9.8437E-12"
+        iyy="9.9719E-06"
+        iyz="6.3535E-13"
+        izz="8.7138E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://acps/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://acps/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link1">
+    <inertial>
+      <origin
+        xyz="-4.8637E-09 0.025442 0.00096665"
+        rpy="0 0 0" />
+      <mass
+        value="0.053822" />
+      <inertia
+        ixx="1.0804E-05"
+        ixy="9.8426E-12"
+        ixz="-6.3193E-13"
+        iyy="7.1817E-06"
+        iyz="3.2723E-08"
+        izz="1.1924E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://acps/meshes/link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://acps/meshes/link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="theta1"
+    type="continuous">
+    <origin
+      xyz="-0.032488 -0.006213 0.032748"
+      rpy="1.5708 0 -0.021846" />
+    <parent
+      link="base_link" />
+    <child
+      link="link1" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="link2">
+    <inertial>
+      <origin
+        xyz="0.038557 -4.5956E-09 6.8917E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.055878" />
+      <inertia
+        ixx="7.9123E-06"
+        ixy="9.8435E-12"
+        ixz="-3.2723E-08"
+        iyy="1.3121E-05"
+        iyz="6.0258E-13"
+        izz="1.2397E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://acps/meshes/link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://acps/meshes/link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="theta2"
+    type="continuous">
+    <origin
+      xyz="0 0.0435 0"
+      rpy="0 0 0" />
+    <parent
+      link="link1" />
+    <child
+      link="link2" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="link3">
+    <inertial>
+      <origin
+        xyz="0.038557 4.7415E-09 0.00093108"
+        rpy="0 0 0" />
+      <mass
+        value="0.055878" />
+      <inertia
+        ixx="7.9123E-06"
+        ixy="-9.8423E-12"
+        ixz="3.2723E-08"
+        iyy="1.3121E-05"
+        iyz="6.6805E-13"
+        izz="1.2397E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://acps/meshes/link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://acps/meshes/link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="theta3"
+    type="continuous">
+    <origin
+      xyz="0.05855 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="link2" />
+    <child
+      link="link3" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="link4">
+    <inertial>
+      <origin
+        xyz="-8.1879E-16 -0.001 -0.013893"
+        rpy="0 0 0" />
+      <mass
+        value="0.012873" />
+      <inertia
+        ixx="4.4076E-06"
+        ixy="-7.0066E-21"
+        ixz="-2.1769E-20"
+        iyy="2.4256E-06"
+        iyz="-4.7282E-21"
+        izz="4.3471E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://acps/meshes/link4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://acps/meshes/link4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="theta4"
+    type="continuous">
+    <origin
+      xyz="0.05855 0 0"
+      rpy="-1.5708 0 1.5708" />
+    <parent
+      link="link3" />
+    <child
+      link="link4" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+</robot>

@@ -10,12 +10,12 @@
 #include "rcutils/cmdline_parser.h"
 
 #include "dynamixel_arm/read_write_node.hpp"
-#include "dynamixel_arm/ax_12a.hpp"
+#include "dynamixel_arm/control_table.hpp"
 
 dynamixel::PortHandler *portHandler;
 dynamixel::PacketHandler *packetHandler;
 
-uint8_t dxl_error = 0;
+uint8_t dxl_error = 0; 
 uint32_t goal_position = 0;
 int dxl_comm_result = COMM_TX_FAIL;
 
