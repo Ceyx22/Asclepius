@@ -8,7 +8,7 @@ import xacro
 
 
 def generate_launch_description():
-    pkg_name = 'acps'
+    pkg_name = 'dynamixel_arm'
     file_subpath = 'urdf/acps.urdf'
     
     # Locate the RVIZ configuration file.
@@ -45,7 +45,7 @@ def generate_launch_description():
 
         Node(
             name       = 'basic', 
-            package    = 'acps',
+            package    = 'dynamixel_arm',
             executable = 'basic.py',
             output     = 'screen')
     ])

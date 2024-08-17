@@ -8,7 +8,7 @@ from rclpy.time                 import Duration
 from tf2_ros                    import TransformBroadcaster
 from geometry_msgs.msg          import TransformStamped
 
-from scripts.TransformHelpers     import *
+from TransformHelpers     import *
 
 
 #
@@ -50,8 +50,8 @@ class DemoNode(Node):
         self.t += self.dt
 
         # Compute position/orientation of the pelvis (w.r.t. world).
-        ppelvis = pxyz(0.0, 0.5, 1.5 + 0.5 * np.sin(self.t/2))
-        Rpelvis = Rotz(np.sin(self.t))
+        ppelvis = pxyz(0.0, 0.0, 0.0)
+        Rpelvis = Rotz(np.sin(0))
         Tpelvis = T_from_Rp(Rpelvis, ppelvis)
         
         # Build up and send the Pelvis w.r.t. World Transform!
