@@ -8,17 +8,17 @@
     name="base_link">
     <inertial>
       <origin
-        xyz="0.012611 -6.0679E-09 0.02001"
+        xyz="0.0050632 -2.8932E-09 0.024787"
         rpy="0 0 0" />
       <mass
-        value="0.043005" />
+        value="0.090196" />
       <inertia
-        ixx="3.5652E-06"
+        ixx="1.7793E-05"
         ixy="-9.8445E-12"
-        ixz="-3.2723E-08"
-        iyy="8.7138E-06"
+        ixz="6.6333E-10"
+        iyy="3.1931E-05"
         iyz="-6.3531E-13"
-        izz="9.9719E-06" />
+        izz="4.6413E-05" />
     </inertial>
     <visual>
       <origin
@@ -48,17 +48,17 @@
     name="link1">
     <inertial>
       <origin
-        xyz="-2.1121E-05 -0.00096642 0.025442"
+        xyz="-4.8378E-09 -0.00096454 0.02552"
         rpy="0 0 0" />
       <mass
-        value="0.053822" />
+        value="0.05394" />
       <inertia
-        ixx="1.0805E-05"
-        ixy="2.4467E-08"
-        ixz="-7.0498E-10"
-        iyy="1.1924E-05"
-        iyz="-3.2716E-08"
-        izz="7.1817E-06" />
+        ixx="1.235E-05"
+        ixy="6.3531E-13"
+        ixz="9.8445E-12"
+        iyy="1.1336E-05"
+        iyz="-3.2723E-08"
+        izz="8.0276E-06" />
     </inertial>
     <visual>
       <origin
@@ -85,10 +85,10 @@
     </collision>
   </link>
   <joint
-    name="theta1"
+    name="joint1"
     type="continuous">
     <origin
-      xyz="0 0 0.0398"
+      xyz="0 0 0.0548"
       rpy="0 0 0" />
     <parent
       link="base_link" />
@@ -101,17 +101,17 @@
     name="link2">
     <inertial>
       <origin
-        xyz="0.038557 -4.5964E-09 6.8917E-05"
+        xyz="0.076862 3.2486E-09 0.0019947"
         rpy="0 0 0" />
       <mass
-        value="0.055878" />
+        value="0.080328" />
       <inertia
-        ixx="7.9123E-06"
-        ixy="9.8443E-12"
-        ixz="-3.2723E-08"
-        iyy="1.3121E-05"
-        iyz="6.0253E-13"
-        izz="1.2397E-05" />
+        ixx="7.0482E-06"
+        ixy="-9.8445E-12"
+        ixz="3.7071E-07"
+        iyy="4.3452E-05"
+        iyz="6.3531E-13"
+        izz="4.7253E-05" />
     </inertial>
     <visual>
       <origin
@@ -138,38 +138,33 @@
     </collision>
   </link>
   <joint
-    name="theta2"
+    name="joint2"
     type="continuous">
     <origin
-      xyz="0 0 0.0435"
-      rpy="1.5708 0 -0.021846" />
+      xyz="0 0 0.04355"
+      rpy="1.5708 0 0" />
     <parent
       link="link1" />
     <child
       link="link2" />
     <axis
       xyz="0 0 -1" />
-    <limit
-      lower="0"
-      upper="0"
-      effort="0"
-      velocity="0" />
   </joint>
   <link
     name="link3">
     <inertial>
       <origin
-        xyz="0.038557 4.7423E-09 0.00093108"
+        xyz="0.076862 3.2486E-09 0.0020359"
         rpy="0 0 0" />
       <mass
-        value="0.055878" />
+        value="0.080328" />
       <inertia
-        ixx="7.9123E-06"
-        ixy="-9.8431E-12"
-        ixz="3.2723E-08"
-        iyy="1.3121E-05"
-        iyz="6.6801E-13"
-        izz="1.2397E-05" />
+        ixx="7.0482E-06"
+        ixy="-9.8445E-12"
+        ixz="3.7071E-07"
+        iyy="4.3452E-05"
+        iyz="6.3531E-13"
+        izz="4.7253E-05" />
     </inertial>
     <visual>
       <origin
@@ -196,10 +191,10 @@
     </collision>
   </link>
   <joint
-    name="theta3"
+    name="joint3"
     type="continuous">
     <origin
-      xyz="0.05855 0 0"
+      xyz="0.11855 0 0"
       rpy="0 0 0" />
     <parent
       link="link2" />
@@ -207,27 +202,22 @@
       link="link3" />
     <axis
       xyz="0 0 -1" />
-    <limit
-      lower="0"
-      upper="0"
-      effort="0"
-      velocity="0" />
   </joint>
   <link
     name="link4">
     <inertial>
       <origin
-        xyz="0.013893 -1.8041E-15 0.001"
+        xyz="0.012363 -6.9389E-17 0.001"
         rpy="0 0 0" />
       <mass
-        value="0.012873" />
+        value="0.011748" />
       <inertia
-        ixx="4.3471E-06"
-        ixy="2.6012E-20"
-        ixz="-4.8142E-21"
-        iyy="4.4076E-06"
-        iyz="-1.7487E-20"
-        izz="2.4256E-06" />
+        ixx="3.7944E-06"
+        ixy="2.1774E-20"
+        ixz="-1.5694E-21"
+        iyy="3.709E-06"
+        iyz="-1.7401E-20"
+        izz="1.8647E-06" />
     </inertial>
     <visual>
       <origin
@@ -254,10 +244,10 @@
     </collision>
   </link>
   <joint
-    name="theta4"
+    name="joint4"
     type="continuous">
     <origin
-      xyz="0.05855 0 0"
+      xyz="0.11855 0 0"
       rpy="0 0 0" />
     <parent
       link="link3" />
@@ -265,10 +255,5 @@
       link="link4" />
     <axis
       xyz="0 0 -1" />
-    <limit
-      lower="0"
-      upper="0"
-      effort="0"
-      velocity="0" />
   </joint>
 </robot>

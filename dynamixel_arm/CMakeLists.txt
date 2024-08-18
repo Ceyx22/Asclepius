@@ -7,9 +7,13 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
+
+find_package(tf2 REQUIRED)
+find_package(rclcpp REQUIRED)
+find_package(tf2_ros REQUIRED)
 find_package(dynamixel_sdk REQUIRED)
 find_package(dynamixel_sdk_custom_interfaces REQUIRED)
-find_package(rclcpp REQUIRED)
+
 
 # include_directories(include)
 find_package(robot_state_publisher REQUIRED)
@@ -18,18 +22,22 @@ find_package(urdf REQUIRED)
 find_package(rviz2 REQUIRED)
 
 # Build
-# add_executable(read_write_node src/read_write_node.cpp)
-# ament_target_dependencies(read_write_node
-#   dynamixel_sdk
-#   dynamixel_sdk_custom_interfaces
-#   rclcpp
-# )
+add_executable(transform_node src/transform_node.cpp)
+ament_target_dependencies(transform_node
+  tf2
+  tf2_ros
+  dynamixel_sdk
+  dynamixel_sdk_custom_interfaces
+  rclcpp
+)
 
 # Install CPP Nodes
-# install(TARGETS
-#   read_write_node
-#   DESTINATION lib/${PROJECT_NAME}
-# )
+install(TARGETS
+  transform_node
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+
 # Install things for simulation
 install(DIRECTORY
   meshes

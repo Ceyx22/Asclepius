@@ -44,8 +44,8 @@ def generate_launch_description():
             output="screen"),
 
         Node(
-            name       = 'basic', 
+            name       = 'transform_node', 
             package    = 'dynamixel_arm',
-            executable = 'basic.py',
-            output     = 'screen')
+            executable = 'transform_node',
+            output     = 'screen') # 
     ])
