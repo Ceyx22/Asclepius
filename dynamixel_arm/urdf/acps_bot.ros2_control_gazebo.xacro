@@ -38,7 +38,7 @@
     </ros2_control>
 
     <gazebo>
-      <plugin filename="libign_ros2_control-system.so" name="ign_ros2_control::IgnitionROS2ControlPlugin">
+      <plugin name="ign_ros2_control::IgnitionROS2ControlPlugin" filename="libign_ros2_control-system.so">
         <parameters>$(find dynamixel_arm)/controllers/controllers.yaml</parameters>
       </plugin>
     </gazebo>

@@ -7,7 +7,7 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
-
+find_package(pluginlib REQUIRED)
 find_package(tf2 REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(tf2_ros REQUIRED)
@@ -31,6 +31,8 @@ ament_target_dependencies(transform_node
   rclcpp
 )
 
+
+
 # Install CPP Nodes
 install(TARGETS
   transform_node
@@ -40,6 +42,7 @@ install(TARGETS
 
 # Install things for simulation
 install(DIRECTORY
+  controllers
   meshes
   urdf
   launch
