@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <xacro:macro name="acps_bot_ros2_control" params="name">
+  <xacro:macro name="acps_bot_ros2_control_gazebo" params="name">
 
     <ros2_control name="${name}" type="system">
       <hardware>
@@ -37,11 +37,11 @@
       </joint>
     </ros2_control>
 
-    <gazebo>
-      <plugin name="ign_ros2_control::IgnitionROS2ControlPlugin" filename="libign_ros2_control-system.so">
-        <parameters>$(find dynamixel_arm)/controllers/controllers.yaml</parameters>
-      </plugin>
-    </gazebo>
+  <gazebo>
+    <plugin filename="ign_ros2_control-system" name="ign_ros2_control::IgnitionROS2ControlPlugin">
+      <parameters>$(find dynamixel_arm)/config/acps_controller.yaml</parameters>
+    </plugin>
+  </gazebo>
 
   </xacro:macro>
 

@@ -8,9 +8,7 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(pluginlib REQUIRED)
-find_package(tf2 REQUIRED)
 find_package(rclcpp REQUIRED)
-find_package(tf2_ros REQUIRED)
 find_package(dynamixel_sdk REQUIRED)
 find_package(dynamixel_sdk_custom_interfaces REQUIRED)
 
@@ -21,40 +19,41 @@ find_package(xacro REQUIRED)
 find_package(urdf REQUIRED)
 find_package(rviz2 REQUIRED)
 
-# Build
-add_executable(transform_node src/transform_node.cpp)
-ament_target_dependencies(transform_node
-  tf2
-  tf2_ros
-  dynamixel_sdk
-  dynamixel_sdk_custom_interfaces
+find_package(control_msgs REQUIRED)
+find_package(rclcpp REQUIRED)
+find_package(rclcpp_action REQUIRED)
+find_package(std_msgs REQUIRED)
+find_package(geometry_msgs REQUIRED)
+# INSTALL
+# install(
+#   DIRECTORY hardware/include/
+#   DESTINATION include/dynamixel_arm
+# )
+
+add_executable(example_gripper example/example_gripper.cpp)
+ament_target_dependencies(example_gripper
   rclcpp
-)
-
-
-
-# Install CPP Nodes
-install(TARGETS
-  transform_node
-  DESTINATION lib/${PROJECT_NAME}
+  std_msgs
 )
 
 
 # Install things for simulation
 install(DIRECTORY
-  controllers
+  config
   meshes
   urdf
   launch
   rviz
-  scripts
   DESTINATION share/${PROJECT_NAME}
 )
-# Python Nodes
-install(PROGRAMS
-  scripts/basic.py
-  scripts/TransformHelpers.py
-  DESTINATION lib/${PROJECT_NAME})
+
+## Install
+install(
+  TARGETS
+    example_gripper
+  DESTINATION
+    lib/${PROJECT_NAME}
+)
 
 # if(BUILD_TESTING)
 #   find_package(ament_lint_auto REQUIRED)
@@ -69,5 +68,5 @@ install(PROGRAMS
 # endif()
 
 # Environment hooks
-ament_environment_hooks("${CMAKE_CURRENT_SOURCE_DIR}/env-hooks/${PROJECT_NAME}.dsv.in")
+# ament_environment_hooks("${CMAKE_CURRENT_SOURCE_DIR}/env-hooks/${PROJECT_NAME}.dsv.in")
 ament_package()

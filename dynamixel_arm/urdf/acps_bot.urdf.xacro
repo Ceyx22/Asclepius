@@ -3,11 +3,10 @@
   <xacro:include filename="$(find dynamixel_arm)/urdf/acps_bot.xacro" />
   <xacro:include filename="$(find dynamixel_arm)/urdf/acps_bot.ros2_control_gazebo.xacro" />
 
-  <link name="world"/>
+  <!-- <link name="world"/> -->
 
-  <xacro:acps_bot parent="world">
-    <origin xyz="0 0 0" rpy="0 0 0" />
-  </xacro:acps_bot>
+  <xacro:acps_bot/>
 
-  <xacro:acps_bot_ros2_control name="acps_bot_ros2_control" />
+
+  <xacro:acps_bot_ros2_control_gazebo name="acps_bot_ros2_control_gazebo" />
 </robot>

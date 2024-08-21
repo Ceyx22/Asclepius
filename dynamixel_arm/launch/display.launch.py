@@ -10,17 +10,15 @@ import xacro
 
 def generate_launch_description():
     pkg_name = 'dynamixel_arm'
-    file_subpath = 'urdf/acps.urdf'
+    file_subpath = 'urdf/acps_bot.urdf.xacro'
     
     # Locate the RVIZ configuration file.
     rvizcfg = os.path.join(pkgdir(pkg_name), 'rviz/viewrobot.rviz')
 
-    # Locate the URDF file.
-    urdf = os.path.join(pkgdir(pkg_name), file_subpath)
+    # Locate xacro file
+    xacro_file = os.path.join(pkgdir(pkg_name),file_subpath)
+    robot_description_config = xacro.process_file(xacro_file).toxml()
 
-    # Load the robot's URDF file (XML).
-    with open(urdf, 'r') as file:
-        robot_description = file.read()
 
     joint_node = Node(
             package="joint_state_publisher_gui",
@@ -33,7 +31,7 @@ def generate_launch_description():
             executable="robot_state_publisher",
             name="robot_state_publisher",
             parameters=[
-                {"robot_description": robot_description}],
+                {"robot_description": robot_description_config}],
             output="screen")
     
     rviz_node = Node(
