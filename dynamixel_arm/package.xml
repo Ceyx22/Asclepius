@@ -10,6 +10,7 @@
   <buildtool_depend>ament_cmake</buildtool_depend>
 
   <depend>dynamixel_sdk</depend>
+  <!-- <depend>dynamixel_hardware</depend> -->
   <depend>dynamixel_sdk_custom_interfaces</depend>
   <depend>rclcpp</depend>
 
@@ -17,14 +18,15 @@
   <depend>joint_state_publisher</depend>
   <depend>joint_state_publisher_gui</depend>
   <depend>robot_state_publisher</depend>
-  <exec_depend>ros2_controllers_test_nodes</exec_depend>
-
 
   <depend>xacro</depend>
   <depend>urdf</depend>
   <depend>rviz2</depend>
   <depend>launch</depend>
   <depend>launch_ros</depend>
+  <exec_depend>controller_manager</exec_depend>
+  <exec_depend>gazebo_ros</exec_depend>
+  <exec_depend>gazebo_ros2_control</exec_depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>

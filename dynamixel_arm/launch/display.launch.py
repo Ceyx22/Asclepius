@@ -41,15 +41,15 @@ def generate_launch_description():
             arguments=["-d", rvizcfg],
             output="screen")
     
-    transform_node = Node(
-            name       = 'transform_node', 
-            package    = 'dynamixel_arm',
-            executable = 'transform_node',
-            output     = 'screen') 
+#     transform_node = Node(
+#             name       = 'transform_node', 
+#             package    = 'dynamixel_arm',
+#             executable = 'transform_node',
+#             output     = 'screen') 
     
     return LaunchDescription([
         joint_node,
         robot_state_publisher_node,
         rviz_node,
-        transform_node,
+        # transform_node,
     ])
